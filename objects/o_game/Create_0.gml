@@ -1,7 +1,7 @@
 global.red_pos = 0;
 global.blue_pos = 0;
 
-turn = 1;
+turn = 1; // red will go first
 
 top_x = 100;
 top_y = 100;
@@ -43,6 +43,11 @@ var inst = instance_create_layer(xx, yy, "Board", o_square_winner);
 inst.text = string("WINNER");
 inst.value = 20;
 
-red_player = instance_create_layer(top_x - 20, top_y, "Instances", o_player_red);
-blue_player = instance_create_layer(top_x - 20, top_y + 20, "Instances", o_player_blue);
+red_player = instance_create_layer(top_x, top_y, "Instances", o_player_red);
+blue_player = instance_create_layer(top_x, top_y, "Instances", o_player_blue);
+
+// move both players to first square
+scr_move(0, 1);
+scr_move(1, 1);
+
 die = instance_create_layer(top_x + 240, top_y - 60, "Instances", o_die);
