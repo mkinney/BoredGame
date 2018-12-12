@@ -1,0 +1,1 @@
+global.winner = -1;
